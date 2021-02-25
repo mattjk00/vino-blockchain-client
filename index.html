@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html style="background-color: rgb(82, 44, 55);" class="uk-light">
+    <head>
+        
+    </head>
+    <body>
+        <ul id="navcontrol" class="uk-subnav uk-subnav-pill uk-margin" uk-switcher>
+            <li><a href="#">Connect</a></li>
+            <li><a href="#" id="mainlink">MainLink</a></li>
+        </ul>
+        
+        <ul class="uk-switcher uk-margin">
+            <li>
+                <div class="uk-section uk-padding">
+                    <h1 class="uk-header-small">VinoCoin Client</h1>
+                    <p id="title" class="uk-form-label">Hello</p>
+                    
+                    <input type="text" id="ct" class="uk-textarea uk-width-medium" placeholder="peer id"/>
+                    <button onclick="connect();" class="uk-button uk-button-default">Connect</button>
+                    <br/>
+        
+                    <input type="text" id="mt" class="uk-textarea uk-width-medium"/>
+                    <button class="uk-button uk-button-default" onclick="broadcast(document.querySelector('#mt').value);">Message</button>
+                </div>
+            </li>
+            <li>
+                <div class="uk-section uk-padding">
+                    <p id="title" class="uk-form-label">VinoCoin Client</p>
+                    <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-padding-small" uk-grid>
+                        
+                        <div>
+                            <p>Wallet: 0 vnc</p>
+                            <p>Peer ID:</p>
+                            <p id="pubkey">Public Key:</p>
+                            <p>Peers: 0</p>
+                            <p>Automine: <input class="uk-checkbox" type="checkbox"/></p>
+                        </div>
+                        <div>
+                            <p>Make Transaction</p>
+                            <input type="text" id="trRecip" class="uk-textarea uk-width-medium " placeholder="Recipient"/>
+                            <input type="number" id="trVal" class="uk-textarea uk-width-large uk-margin-small-top" placeholder="Value"/>
+                            <button class="uk-button uk-button-default uk-margin-small-top">Send</button>
+                        </div>
+                        
+                    </div>
+                    <div class="uk-section">
+                        <textarea id="streamBox" class="uk-textarea uk-form-small uk-width-large uk-height-small" placeholder="Message Stream..." style="resize: none;" name="nowrap" cols="30" rows="25" wrap="soft" readonly></textarea>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        
+    </body>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="src/app.js"></script>
+</html>
